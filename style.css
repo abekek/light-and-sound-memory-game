@@ -59,6 +59,22 @@ button {
     background:yellow;
 }
 
+#button5 {
+    background: lightcyan;
+}
+
+#button5:active, #button5.lit {
+    background:cyan;
+}
+
+#button6 {
+    background: lightcoral;
+}
+
+#button6:active, #button6.lit {
+    background:coral;
+}
+
 #gameButtonArea > button {
   width:200px;
   height:200px;
