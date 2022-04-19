@@ -1,5 +1,5 @@
 // global constants
-const clueHoldTime = 1000; //how long to hold each clue's light/sound
+// const clueHoldTime = 1000; //how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
@@ -10,10 +10,15 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
+var clueHoldTime = 1000;
+var mistakes = 0;
 
 function startGame(){
   //initialize game variables
   progress = 0;
+  mistakes = 0;
+  clueHoldTime = 1000;
+  document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
   gamePlaying = true;
   generatePattern();
   // swap the Start and Stop buttons
@@ -24,6 +29,8 @@ function startGame(){
 
 function stopGame(){
   gamePlaying = false;
+  mistakes = 0;
+  document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
 }
@@ -73,6 +80,7 @@ function playClueSequence(){
     delay += clueHoldTime 
     delay += cluePauseTime;
   }
+  clueHoldTime -= 100;
 }
 
 function guess(btn){
@@ -83,7 +91,20 @@ function guess(btn){
   
   // add game logic here
   if(btn != pattern[guessCounter]){
-    loseGame();
+    mistakes++;
+    document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
+    if(mistakes >= 3){
+     loseGame(); 
+    }
+    else{
+      if(progress != pattern.length - 1){
+        progress++;
+        playClueSequence();
+      }
+      else{
+        winGame();
+      }
+    }
   }
   else{
     if(guessCounter != progress){
