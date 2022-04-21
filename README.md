@@ -4,9 +4,9 @@
 
 Submitted by: **Alibek Kaliyev**
 
-Time spent: **#** hours spent in total
+Time spent: **5** hours spent in total
 
-Link to project: (insert your link here, should start with https://glitch.com...)
+Link to project: (https://glitch.com/edit/#!/organic-glossy-cherry)
 
 ## Required Functionality
 
@@ -30,7 +30,7 @@ The following **optional** features are implemented:
 * [x] Player only loses after 3 mistakes (instead of on the first mistake)
 * [ ] Game button appearance change goes beyond color (e.g. add an image)
 * [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [ ] User has a limited amount of time to enter their guess on each turn
+* [x] User has a limited amount of time to enter their guess on each turn
 
 The following **additional** features are implemented:
 
@@ -39,23 +39,49 @@ The following **additional** features are implemented:
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
+
+Repeat back the pattern by pressing buttons!
+![](https://recordit.co/ncdxbsekz3)
+
+You can make up to 3 mistakes.
+![](https://recordit.co/pmcEccQ0yJ)
+
+Think faster or you gonna lose!
+![](https://recordit.co/qqVa5pcLXC)
+
+Win by completing the entire pattern.
+![](https://recordit.co/p0wQcpVtHy)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
+
 - [How do I use this JavaScript variable in HTML?](https://stackoverflow.com/questions/30035932/how-do-i-use-this-javascript-variable-in-html)
+- [Create a simple 10 second countdown](https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown)
+- [How TO - JavaScript Countdown Timer](https://www.w3schools.com/howto/howto_js_countdown.asp)
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+
+The main challenge that I encountered in creating this submission was creating a ticking clock because I have never worked with it previously.
+It was a little bit challenging to consider all cases when the interval should be cleared or set. Sometimes the timer was going to a negative 
+number even though I stopped the game, and in other cases, the timer was changing too quickly. That is why, I cleared the timer every time I 
+click the STOP button, and every time the user makes a guess. I also started a timer only when the user hits the start button, and when the next 
+sequence starts to play. I spent around 30-40 minutes playing the game and debugging the code of the ticking clock. I also leveraged Internet resources 
+like StackOverflow and W3 schools to learn more about the correct implementation of ```setInterval``` and ```clearInterval```. Generally, I think this helped me to 
+learn more about the UX aspect of building any application, and some game design.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+After completing my submission, I am curious about the other ways this web application can be developed. I see that currently, we have 3 main files: index.html, 
+script.js, and style.css that build the entire web page. However, as the complexity and size of the program increase, it is harder to read and edit code by scrolling 
+hundreds of pages of these files. This is a drawback that I encountered during development. I am curious if it is possible to modularize the code of HTML and JavaScript 
+without using cool libraries like React and Vue. Moreover, I am curious about how this kind of game would be deployed on the server, and how we can optimize it for all users.
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+
+As I mentioned in the previous response, I would spend my time modularizing the code into multiple subfiles so that other developers will find it easier to implement additional 
+features or debug the code. I would also add features like a progress bar that would show the length of the entire sequence in the game so that the user can see their progress. 
+Additionally, I would add a registration page, a leaderboard, and a scoring system so that my friends and I would be able to compete with each other in memorizing sequences. 
+I think another cool feature would be to shuffle buttons in the layout so that memorization will have a higher difficulty.
 
 
 
