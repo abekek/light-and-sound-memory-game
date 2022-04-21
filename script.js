@@ -12,10 +12,13 @@ var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000;
 var mistakes = 0;
+var countDownTime = 16;
+var timer;
 
 function startGame(){
   //initialize game variables
   progress = 0;
+  countDownTime = 16;
   mistakes = 0;
   clueHoldTime = 1000;
   document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
@@ -33,6 +36,19 @@ function stopGame(){
   document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
+  countDownTime = 16;
+  document.getElementById("timer").innerHTML = "Timer: " + (countDownTime-1) + " seconds";
+  clearInterval(timer);
+}
+
+function displayCountDown(){
+  countDownTime--;
+  document.getElementById("timer").innerHTML = "Timer: " + (countDownTime-1) + " seconds";
+  if(countDownTime <= 0){
+    clearInterval(timer);
+    loseGame();
+  }
+  
 }
 
 function loseGame(){
@@ -80,7 +96,8 @@ function playClueSequence(){
     delay += clueHoldTime 
     delay += cluePauseTime;
   }
-  clueHoldTime -= 100;
+  clueHoldTime -= 70;
+  timer = setInterval(displayCountDown, 1000);
 }
 
 function guess(btn){
@@ -91,6 +108,8 @@ function guess(btn){
   
   // add game logic here
   if(btn != pattern[guessCounter]){
+    clearInterval(timer);
+    countDownTime = 16;
     mistakes++;
     document.getElementById('mistakesTxt').innerHTML = "Number of mistakes: " + mistakes + "/3";
     if(mistakes >= 3){
@@ -111,6 +130,8 @@ function guess(btn){
       guessCounter++;
     }
     else{
+      clearInterval(timer);
+      countDownTime = 16;
       if(progress != pattern.length - 1){
         progress++;
         playClueSequence();

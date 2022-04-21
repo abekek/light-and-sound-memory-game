@@ -21,15 +21,25 @@
     <p id="mistakesTxt">
       Number of mistakes: 0/3
     </p>
+    <p id="timer">
+      Timer: 15 seconds
+    </p>
+    <br>
     <button id="startBtn" onclick="startGame()">Start</button>
     <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
     
     <div id="gameButtonArea">
-      <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()"></button>
+      <button id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()">
+        <img id="img1" class="hidden" src="https://cdn.glitch.global/c8635252-fe9f-493e-bd63-ce07bb0d0c26/salesforce_mascots1.png?v=1650419266416">
+      </button>
       <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
-      <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
+      <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()">
+        <img id="img3" class="hidden" src="https://cdn.glitch.global/c8635252-fe9f-493e-bd63-ce07bb0d0c26/salesforce_mascots3.png?v=1650419362073">
+      </button>
       <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
-      <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"></button>
+      <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()">
+        <img id="img5" class="hidden" src="https://cdn.glitch.global/c8635252-fe9f-493e-bd63-ce07bb0d0c26/salesforce_mascots2.png?v=1650419366052">
+      </button>
       <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone()"></button>
     </div>
   </body>
