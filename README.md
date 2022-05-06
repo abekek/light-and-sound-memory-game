@@ -86,7 +86,7 @@ I think another cool feature would be to shuffle buttons in the layout so that m
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](https://drive.google.com/file/d/1rkLlJ_ZfIbc-WivJQKGX_i36A7d43vrG/view?usp=sharing)
+The link was removed due to privacy reasons
 
 ## License
 
